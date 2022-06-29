@@ -3,9 +3,7 @@ class ComprasController < ApplicationController
 
   # GET /compras
   def index
-    @compras = Compra.all
-
-    @compras = @compras.sort_by &:crypto
+    @compras = Compra.formatter
 
     render json: @compras
   end
