@@ -5,6 +5,8 @@ class ComprasController < ApplicationController
   def index
     @compras = Compra.all
 
+    @compras = @compras.sort_by &:crypto
+
     render json: @compras
   end
 
